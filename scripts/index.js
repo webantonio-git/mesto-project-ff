@@ -19,8 +19,7 @@ function addCard(item, deleteCard) {
 
   newPlacesItem
     .querySelector(".card__delete-button")
-    .addEventListener("click", function (evt) {
-      document.querySelector(".card__delete-button").closest(".places__item");
+    .addEventListener("click", function (evt) {     
       deleteCard(newPlacesItem);
     });
 
