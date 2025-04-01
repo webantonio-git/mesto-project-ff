@@ -13,13 +13,14 @@ const placesList = document.querySelector(".places__list");
 
 function addCard(item, deleteCard) {
   const newPlacesItem = newCards.querySelector(".places__item").cloneNode(true);
-  newPlacesItem.querySelector(".card__image").src = item.link;
-  newPlacesItem.querySelector(".card__image").alt = item.name;
+  const imgCard = newPlacesItem.querySelector(".card__image");
+  imgCard.src = item.link;
+  imgCard.alt = item.name;
   newPlacesItem.querySelector(".card__title").textContent = item.name;
 
   newPlacesItem
     .querySelector(".card__delete-button")
-    .addEventListener("click", function (evt) {     
+    .addEventListener("click", function (evt) {
       deleteCard(newPlacesItem);
     });
 
