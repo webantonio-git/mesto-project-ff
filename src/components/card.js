@@ -1,6 +1,6 @@
-const newCards = document.querySelector("#card-template").content;
 
-export function addCard(item, deleteCard, likeCard, popupImage) {
+
+export function addCard(item, deleteCard, likeCard, popupImage, newCards) {
     const newPlacesItem = newCards.querySelector(".places__item").cloneNode(true);
     const imgCard = newPlacesItem.querySelector(".card__image");
     imgCard.src = item.link;

@@ -36,6 +36,7 @@ const cardName = cardElement.elements["place-name"];
 const cardLink = cardElement.elements["link"]; 
 const titleName = document.querySelector('.profile__title');
 const titleDescription = document.querySelector('.profile__description');
+const newCards = document.querySelector("#card-template").content;
 
 const popArray = [popupEdit, cardAdd, popImage];
 
@@ -50,7 +51,7 @@ popArray.forEach(popup => {
 
 
 initialCards.forEach((item) => {
-  const cardElement = addCard(item, deleteCard, likeCard, popupImage);
+  const cardElement = addCard(item, deleteCard, likeCard, popupImage, newCards);
   placesList.append(cardElement);
 });
 
@@ -90,7 +91,7 @@ document.querySelector('.profile__add-button').addEventListener('click', functio
     evt.preventDefault();   
     const name = cardName.value;
     const link = cardLink.value; 
-    const addNewCard = addCard({name, link}, deleteCard, likeCard, popupImage);
+    const addNewCard = addCard({name, link}, deleteCard, likeCard, popupImage, newCards);
     placesList.prepend(addNewCard);
     cardElement.reset();
     closeModal(cardAdd);
