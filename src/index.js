@@ -51,11 +51,11 @@ popArray.forEach(popup => {
 
 
 initialCards.forEach((item) => {
-  const cardElement = addCard(item, deleteCard, likeCard, popupImage, newCards);
+  const cardElement = addCard(item, deleteCard, likeCard, openPopImg, newCards);
   placesList.append(cardElement);
 });
 
-function popupImage(evt) {
+function openPopImg(evt) {
   const img = evt.target;
   popupImageElement.src = img.src;
   popupImageElement.alt = img.alt;
@@ -85,13 +85,13 @@ formElement.addEventListener('submit', handleFormSubmit);
 document.querySelector('.profile__add-button').addEventListener('click', function(evt) {
   openModal(cardAdd);
   });
-  cardElement.addEventListener('submit', cardFormSubmit);
+  cardElement.addEventListener('submit', handleCardFormSubmit);
 
-  function cardFormSubmit(evt) {
+  function handleCardFormSubmit(evt) {
     evt.preventDefault();   
     const name = cardName.value;
     const link = cardLink.value; 
-    const addNewCard = addCard({name, link}, deleteCard, likeCard, popupImage, newCards);
+    const addNewCard = addCard({name, link}, deleteCard, likeCard, openPopImg, newCards);
     placesList.prepend(addNewCard);
     cardElement.reset();
     closeModal(cardAdd);
