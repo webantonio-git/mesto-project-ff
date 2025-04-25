@@ -25,9 +25,9 @@ document.querySelector(
 const placesList = document.querySelector(".places__list");
 const popupEdit = document.querySelector('.popup_type_edit');
 const cardAdd = document.querySelector('.popup_type_new-card');
-const formElement = document.querySelector(".popup__form"); 
-const nameInput = formElement.querySelector(".popup__input_type_name"); 
-const jobInput = formElement.querySelector(".popup__input_type_description");
+const editProfileForm = document.querySelector(".popup__form"); 
+const nameInput = editProfileForm.querySelector(".popup__input_type_name"); 
+const jobInput = editProfileForm.querySelector(".popup__input_type_description");
 const popImage = document.querySelector(".popup_type_image");
 const popupImageElement = document.querySelector(".popup__image"); 
 const popupCaptionElement = document.querySelector(".popup__caption"); 
@@ -55,24 +55,18 @@ initialCards.forEach((item) => {
   placesList.append(cardElement);
 });
 
-function openPopImg(evt) {
-  const img = evt.target;
-  popupImageElement.src = img.src;
-  popupImageElement.alt = img.alt;
-  popupCaptionElement.textContent = img.alt;
+function openPopImg({nameCard, linkCard}) {
+  popupImageElement.src = linkCard;
+  popupImageElement.alt = nameCard;
+  popupCaptionElement.textContent = nameCard;
   openModal(popImage);
 }
 
-function handleFormSubmit(evt) {
+function profileFormSubmit(evt) {
   evt.preventDefault(); 
-
-  const newName = nameInput.value;
-  const newDescription = jobInput.value;
- 
-  titleName.textContent = newName;
-  titleDescription.textContent = newDescription;
+  titleName.textContent = nameInput.value;;
+  titleDescription.textContent = jobInput.value;
   closeModal(popupEdit);
-
 }
 
 document.querySelectorAll('.popup__close').forEach(btn => {
@@ -81,7 +75,7 @@ document.querySelectorAll('.popup__close').forEach(btn => {
     closeModal(close);
   })
   });
-formElement.addEventListener('submit', handleFormSubmit);
+editProfileForm.addEventListener('submit', profileFormSubmit);
 document.querySelector('.profile__add-button').addEventListener('click', function(evt) {
   openModal(cardAdd);
   });

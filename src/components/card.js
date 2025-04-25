@@ -3,9 +3,12 @@
 export function addCard(item, deleteCard, likeCard, popupImage, newCards) {
     const newPlacesItem = newCards.querySelector(".places__item").cloneNode(true);
     const imgCard = newPlacesItem.querySelector(".card__image");
-    imgCard.src = item.link;
-    imgCard.alt = item.name;
-    newPlacesItem.querySelector(".card__title").textContent = item.name;
+    const nameCard = item.name;
+    const linkCard = item.link;
+    imgCard.src = linkCard;
+    imgCard.alt = nameCard;
+    newPlacesItem.querySelector(".card__title").textContent = nameCard;
+  
   
     newPlacesItem
       .querySelector(".card__delete-button")
@@ -14,7 +17,7 @@ export function addCard(item, deleteCard, likeCard, popupImage, newCards) {
       });
   
       newPlacesItem.querySelector('.card__like-button').addEventListener('click', likeCard);
-      newPlacesItem.querySelector('.card__image').addEventListener('click', popupImage);
+      imgCard.addEventListener('click', () => popupImage({ nameCard, linkCard }));
   
     return newPlacesItem;
   }
