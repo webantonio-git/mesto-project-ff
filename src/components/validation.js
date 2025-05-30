@@ -95,6 +95,6 @@ const enableObject = {
 }
 
 
-enableValidation(enableObject);
+
 
 

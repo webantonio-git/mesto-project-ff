@@ -12,7 +12,7 @@
 
 import "./pages/index.css";
 import logo from "./images/logo.svg";
-import avatar from "./images/avatar.jpg";
+
 import { openModal, closeModal} from "./components/modal.js";
 import {  addCard,  likeCardFactory } from "./components/card.js";
 import { enableValidation, clearValidation } from "./components/validation.js";
@@ -100,9 +100,6 @@ avatarForm.addEventListener('submit', (evt) => {
       alert(`Ошибка обновления аватара: ${err}`);
         toggleButtonState(submitButton, { isLoading: false, originalText });
     })
-      /*.finally(() => {
-      toggleButtonState(submitButton, { isLoading: false, originalText });
-    })*/;
 });
 
 
@@ -146,12 +143,7 @@ toggleButtonState(submitButton, { isLoading: true, originalText });
    .catch(err => {
       toggleButtonState(submitButton, { isLoading: false, originalText });
       alert(`Ошибка обновления профиля: ${err}`);
-    })
-    /*.finally(() => {   
-      submitButton.textContent = originalText;
-      submitButton.disabled = false;
-    
-    })*/;
+    });
  
 }
 
@@ -197,10 +189,7 @@ document.querySelector('.profile__add-button').addEventListener('click', functio
     .catch(err => {
       alert(`Ошибка добавления карточки: ${err}`);
        toggleButtonState(submitButton, { isLoading: false, originalText });
-    })
-    /*.finally(() => {
-      toggleButtonState(submitButton, { isLoading: false, originalText });
-    })*/;
+    })    ;
 }
 
 
