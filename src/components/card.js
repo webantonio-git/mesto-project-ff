@@ -47,9 +47,7 @@ export function likeCardFactory(addLikeServer, removeLikeServer) {
         likeButton.classList.toggle('card__like-button_is-active', !isLiked);
         likeCounter.textContent = updatedCard.likes.length;
       })
-      .catch(err => {
-        alert(`Ошибка при изменении лайка: ${err}`);
-      });
+     
   };
 }
 

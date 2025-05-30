@@ -70,9 +70,6 @@ Promise.all([getUser(), getInitialCards()])
       placesList.append(cardElement);
     });
   })
-  .catch((error) => {
-    alert('Не удалось загрузить данные. Попробуйте позже. ' + error);
-  });
 
   profileAvatar.addEventListener('click', () => {
   avatarUrlInput.value = '';
@@ -97,7 +94,7 @@ avatarForm.addEventListener('submit', (evt) => {
         toggleButtonState(submitButton, { isLoading: false, originalText });
     })
     .catch((err) => {      
-      alert(`Ошибка обновления аватара: ${err}`);
+ 
         toggleButtonState(submitButton, { isLoading: false, originalText });
     })
 });
@@ -142,7 +139,7 @@ toggleButtonState(submitButton, { isLoading: true, originalText });
   })
    .catch(err => {
       toggleButtonState(submitButton, { isLoading: false, originalText });
-      alert(`Ошибка обновления профиля: ${err}`);
+  
     });
  
 }
@@ -187,7 +184,7 @@ document.querySelector('.profile__add-button').addEventListener('click', functio
          toggleButtonState(submitButton, { isLoading: false, originalText });
     })
     .catch(err => {
-      alert(`Ошибка добавления карточки: ${err}`);
+    
        toggleButtonState(submitButton, { isLoading: false, originalText });
     })    ;
 }
@@ -221,7 +218,7 @@ confirmForm.addEventListener('submit', function(evt) {
       closeModal(popupConfirm);
     })
     .catch(err => {
-      alert(`Ошибка при удалении карточки: ${err}`);
+ 
     });
 });
   
