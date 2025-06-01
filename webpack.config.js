@@ -10,9 +10,9 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "main.js",
-    publicPath: '/mesto-project-ff/'
+    publicPath: '/'
   },
-  mode: "production",
+  mode: "development",
   devServer: {
     static: {
       directory: path.resolve(__dirname, "dist"),
