@@ -139,14 +139,13 @@ function profileFormSubmit(evt) {
       titleName.textContent = nameInput.value;
       titleDescription.textContent = jobInput.value;
 
-     
       closeModal(popupEdit);
     })
     .catch((err) => {
       console.error(`Ошибка: ${err}`);
     })
     .finally(() => {
-   toggleButtonState(submitButton, { isLoading: false, originalText });
+      toggleButtonState(submitButton, { isLoading: false, originalText });
     });
 }
 
