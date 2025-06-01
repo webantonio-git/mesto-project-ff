@@ -1,4 +1,22 @@
+.popup__error,
+.place-name-input-error,
+.profile-name-input-error,
+.avatarUrl-error,
+.place-url-input-error {
+  display: block;
+  min-height: 30px;
+  font-size: 12px;
+  line-height: 1.2;
+  color: #ff0000;
+  visibility: hidden;
+  margin-top: 5px;
+}
+
+.popup__error_visible {
+  visibility: visible;
+}
+
 .popup__input_type_error {
-  border-bottom: 1px solid #ff0000;
-  
+
+   border: 1px solid #ff0000;
 }
