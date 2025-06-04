@@ -1,2 +1,2 @@
 # Проектная работа Mesto
-https://webantonio-git.github.io/mesto
+https://webantonio-git.github.io/mesto-project-ff/
